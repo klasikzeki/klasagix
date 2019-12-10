@@ -1,0 +1,29 @@
+{
+  "name": "thehive4node",
+  "version": "0.0.1",
+  "description": "NodeJS library to speak with TheHive API",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint --fix --config ./config/eslintrc.yml index.js src/*.js src/**/*.js test/*.js test/**/*.js",
+    "lint-report": "yarn run lint ; yarn run lint -o eslint.json -f json",
+    "test": "node_modules/.bin/mocha test/**/*.js",
+    "test-report": "node_modules/.bin/nyc -a -x coverage/ -x test/ --reporter=lcov --reporter=text yarn run test"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0"
+  }
+}
